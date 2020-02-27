@@ -71,4 +71,4 @@
 - trading in delivery speed for code quality
 
 ### Question:
-Does your comment benefit your team mate, or it's just a pointless statement to show how smart you are?
+Does your code review benefit your team or just tries to prove how smart you are?
