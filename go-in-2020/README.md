@@ -144,8 +144,9 @@ Well, depends on location
 
 ## Simplicity
 
-- Limited feature set & keywords (no fancy features)
-- Simple & limited data structures
+- The language philosophy
+- Limited feature set & keywords (no fancy features like generics)
+- Simple & limited data structures (no classes, just funcs and types)
 
 ## Reliability
 
@@ -156,8 +157,8 @@ Well, depends on location
 ## Robustness
 
 - Super stable with limited updates
-- 100% compatible
-- Cross platform
+- 100% compatible & no breaking changes
+- Cross platform ($GOOS $GOARCH)
 
 ## Maturity
 
@@ -168,3 +169,8 @@ Well, depends on location
 - Great docs, examples & resources
 - Growing market depending on location (everyone is catching up, from PHP, JS, and even Java and C++)
 - About 2M gophers
+
+## Temp
+
+- Blazing fast specs with magic
+- Cross platform with magic
