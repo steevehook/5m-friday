@@ -1,5 +1,11 @@
 # Go routines
 
+## Intro
+
+- 5m Friday intro
+- Intro to concurrency topic
+- Throw 5m on the clock
+
 Application level threads not OS threads
 
 ## Light
