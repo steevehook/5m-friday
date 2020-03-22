@@ -44,6 +44,11 @@
 - Less is more (less threads, more work)
 - Optional - Know the type of work that need to be done concurrently
 
+## Add
+
+- `runtime.NumCPU()`
+- `runtime.GOMAXPROCS()`
+
 ## References
 
 - Ardan Labs
