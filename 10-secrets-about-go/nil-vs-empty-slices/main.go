@@ -13,13 +13,14 @@ type response struct {
 }
 
 func main() {
+	// slice zero value = nil
 	p := people{
 		{"John"},
 		{"Steve"},
 	}
-	res := response{Items: p}
-	bs1, _ := json.Marshal(res)
-	bs2, _ := json.Marshal(response{}) // zero value
-	bs3, _ := json.Marshal(response{Items: people{}})
-	fmt.Printf("%s\n%s\n%s", string(bs1), string(bs2), string(bs3))
+	bs1, _ := json.Marshal(response{Items: p})
+	bs2, _ := json.Marshal(response{}) // Items = nil
+	bs3, _ := json.Marshal(response{Items: people(nil)}) // Items = nil
+	bs4, _ := json.Marshal(response{Items: people{}}) // Items = empty
+	fmt.Printf("%s\n%s\n%s\n%s", string(bs1), string(bs2), string(bs3), string(bs4))
 }
