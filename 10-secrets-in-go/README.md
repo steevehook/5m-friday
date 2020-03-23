@@ -8,8 +8,6 @@
 
 - Kidding, (close the book), so today we're talking about 10 secrets in Go
 
-- It was a hard for me to choose which one of these secrets / tips & tricks makes it into the list. So if you think others did not make it, let me know in the comments below
-
 #### Topics (5m)
 
 1) `nil slice` vs `empty slice` (30s)
@@ -23,6 +21,12 @@
 9) nil `interface{}` (30s)
 10) `value` vs `pointer` receiver (30s)
 
+## End
+
+It was a hard for me to choose which one of these secrets / tips & tricks makes it into the list.
+So if you think others did not make it, let me know in the comments below
+
+## Links to the source code
 
 ## Resources
 

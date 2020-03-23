@@ -16,15 +16,17 @@ func main() {
 		"Jane",
 	}
 
-	//p := people[1:2]
-	p := people[2:3:3]
+	p := people[1:2]
+	//p := people[1:2:2] // [low:high:max] => cap = max-low
 	fmt.Println("capacity:", cap(p))
 	p = append(p, "Mike")
+
 	inspect("people: ", people)
 	inspect("sub people: ", p)
 	fmt.Println(people[2])
 
-	peopleClone := append(people[:0:0], people...)
+	// pure clone
+	peopleClone := append(people[:0:0], people...) // [0:0:0]
 	inspect("people: ", people)
 	inspect("peopleClone: ", peopleClone)
 }
