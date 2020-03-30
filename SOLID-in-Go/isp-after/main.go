@@ -1,0 +1,69 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+type square struct {
+	length float64
+}
+
+func (s square) area() float64 {
+	return math.Pow(s.length, 2)
+}
+
+type cube struct {
+	square
+}
+
+func (c cube) volume() float64 {
+	return math.Pow(c.length, 3)
+}
+
+type areaCalculator interface {
+	area() float64
+}
+
+type volumeCalculator interface {
+	volume() float64
+}
+
+type shape interface {
+	areaCalculator
+	volumeCalculator
+}
+
+func areaSum(shapes ...areaCalculator) float64 {
+	var sum float64
+	for _, s := range shapes {
+		sum += s.area()
+	}
+	return sum
+}
+
+func volumeSum(shapes ...volumeCalculator) float64 {
+	var sum float64
+	for _, s := range shapes {
+		sum += s.volume()
+	}
+	return sum
+}
+
+func areaVolumeSum(shapes ...shape) float64 {
+	var sum float64
+	for _, s := range shapes {
+		sum += s.area() + s.volume()
+	}
+	return sum
+}
+
+func main() {
+	s1 := square{length: 5}
+	s2 := square{length: 6}
+	c1 := cube{square: square{length: 3}}
+	c2 := cube{square: square{length: 4}}
+	fmt.Println(areaSum(s1, s2, c1, c2))
+	fmt.Println(volumeSum(c1, c2))
+	fmt.Println(areaVolumeSum(c1, c2))
+}
