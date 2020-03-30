@@ -7,7 +7,7 @@ type person struct {
 
 func main() {
 	// type & value MUST BE NIL
-	p := adult(10)
+	p := adult(19)
 	if p != nil {
 		fmt.Println(":(, I'm still a kid")
 	} else {
