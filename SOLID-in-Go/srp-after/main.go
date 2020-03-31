@@ -45,8 +45,10 @@ func (o outputter) Text(s shape) string {
 
 func (o outputter) JSON(s shape) string {
 	res := struct {
+		Name string `json:"shape"`
 		Area float64 `json:"area"`
 	}{
+		Name: s.name(),
 		Area: s.area(),
 	}
 

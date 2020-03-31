@@ -35,13 +35,25 @@ type shape interface {
 	volume() float64
 }
 
-func calculateShape(s shape) float64 {
-	return s.area() + s.volume()
+func areaSum(shapes ...shape) float64 {
+	var sum float64
+	for _, s := range shapes {
+		sum += s.area()
+	}
+	return sum
+}
+
+func areaVolumeSum(shapes ...shape) float64 {
+	var sum float64
+	for _, s := range shapes {
+		sum += s.area() + s.volume()
+	}
+	return sum
 }
 
 func main() {
 	s := square{length: 3}
 	c := cube{length: 4}
-	fmt.Println(calculateShape(s))
-	fmt.Println(calculateShape(c))
+	fmt.Println(areaSum(s, c))
+	fmt.Println(areaVolumeSum(s, c))
 }
