@@ -26,7 +26,6 @@ type person interface {
 }
 
 type printer struct {
-	people []human
 }
 
 func (printer) info(p person) {

@@ -21,20 +21,16 @@ func (c cube) volume() float64 {
 	return math.Pow(c.length, 3)
 }
 
-type areaCalculator interface {
+type shape interface {
 	area() float64
 }
 
-type volumeCalculator interface {
+type object interface {
+	shape
 	volume() float64
 }
 
-type shape interface {
-	areaCalculator
-	volumeCalculator
-}
-
-func areaSum(shapes ...areaCalculator) float64 {
+func areaSum(shapes ...shape) float64 {
 	var sum float64
 	for _, s := range shapes {
 		sum += s.area()
@@ -42,15 +38,7 @@ func areaSum(shapes ...areaCalculator) float64 {
 	return sum
 }
 
-func volumeSum(shapes ...volumeCalculator) float64 {
-	var sum float64
-	for _, s := range shapes {
-		sum += s.volume()
-	}
-	return sum
-}
-
-func areaVolumeSum(shapes ...shape) float64 {
+func areaVolumeSum(shapes ...object) float64 {
 	var sum float64
 	for _, s := range shapes {
 		sum += s.area() + s.volume()
@@ -64,6 +52,5 @@ func main() {
 	c1 := cube{square: square{length: 3}}
 	c2 := cube{square: square{length: 4}}
 	fmt.Println(areaSum(s1, s2, c1, c2))
-	fmt.Println(volumeSum(c1, c2))
 	fmt.Println(areaVolumeSum(c1, c2))
 }
