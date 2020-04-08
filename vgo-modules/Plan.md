@@ -43,8 +43,9 @@ go get go.uber.org/zap
 
 ### Let's get rid of `// indirect` & add a small example
 
+- `//indirect` will stay there if we have deps that use them, yet our code does not use them
 - open `simple-http` example
-- run `go mod tidy`
+- run `go mod tidy`a
 - add dep `go get github.com/stretchr/testify`
 - run `go mod why go.uber.org/zap`
 - run `go mod why github.com/stretchr/testify`
