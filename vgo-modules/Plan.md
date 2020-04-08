@@ -1,6 +1,22 @@
-# `go mod init`
+# Plan
+
+### Usual Intro
+
+- Name, topic & 5m friday intro
+
+### Small into of what we will do
+
+- Create a new project using Go modules
+- Explore `go mod` commands
+- Explore `go get` commands that work with modules
+- Explore semantic import versioning
+- Explore the ins & outs Go modules
+- Migrate a small project from `dep` pkg manager to Go modules & how easy it is
 
 ### Generate `go.mod`
+
+Let's create a small project using Go modules
+We need 2 files, `go.mod` and `go.sum`
 
 Let's generate the `go.mod` file:
 ```bash
@@ -23,6 +39,7 @@ go get go.uber.org/zap
 ### Explain `go.sum` - **The instructions**
 - It contains the entire dependency graph (transitive deps)
 - It is a snapshot of a reproducible build
+- Normally never modify this file, it is generated
 
 ### Let's get rid of `// indirect` & add a small example
 
