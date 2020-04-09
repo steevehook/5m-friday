@@ -44,11 +44,11 @@ go get go.uber.org/zap
 ### Let's get rid of `// indirect` & add a small example
 
 - `//indirect` will stay there if we have deps that use them, yet our code does not use them
-- open `simple-http` example
-- run `go mod tidy`a
-- add dep `go get github.com/stretchr/testify`
+- copy `simple-http` example
+- run `go mod tidy`
+- add dep `go get rsc.io/quote`
+- run `go mod why rsc.io/quote`
 - run `go mod why go.uber.org/zap`
-- run `go mod why github.com/stretchr/testify`
 
 ### Explain `go mod tidy`
 
@@ -88,40 +88,42 @@ go get github.com/julienschmidt/httprouter@90ef33e1709f1f049b2ecc4dfab58869d93ef
 
 - Explain the `pseudo commit anatomy`, look up the `go.mod` file
 
+- run `go get rsc.io/quote` and explain that it is using `v1`
+
+### Let's explain the difference in dep versions
+
+Let's talk about import paths
+
+`v0` - breaking changes
+`v1` - stable
+When you run go get and not specify `v2+` it's gonna default to `v0` and `v1`
+`v2+` - major bump, requires path change. Effort from authors
+
+- Add `quote` dep
+- Add `quote@v3` - get error
+- Fix error
+- Use quote v3
+
 #### fetch all deps
 
 - run `go get ./...` useful for auto completion and IDE tools
 - run `go run/test/build`
 - `go clean -cache -modcache -i -r` clears download cache
 - `go mod vendor` useful if developing inside `$GOPATH`, IMHO not really useful
-- pass `-mod=vendor` to respect vendor directory feature
+- `go list -m -versions go.uber.org/zap` - List all versions
+- pass `-mod=vendor` to respect vendor directory feature (NOT REQUIRED)
 ---
-
-### Explain `$GOPATH/pkg/mod`
-
-- `$GOPATH/pkg/mod` downloaded deps source
-- `cache/download` deps download cache
-
-### List all versions
-
-```bash
-go list -m -versions go.uber.org/zap
-```
 
 ### Pre-fill the download cache
 
-`go mod download` downloads deps indicated in `go.mod` without using source code
-
-### Let's explain the difference in dep versions
-
-`v0` - breaking changes
-`v1` - stable
-`v2+` - major bump, requires path change. Effort from authors
+- `go mod download` downloads deps indicated in `go.mod` without using source code, compare it to go get
+- `$GOPATH/pkg/mod` downloaded deps source
+- `$GOPATH/pkg/mod/cache/download` deps download cache
 
 ### Explain env variables
 
 - `$GOPROXY`
-used as an alternative to fetch deps instead of using VCS
+used as an alternative to fetch deps instead of using VCS, good if VCS is down, or compromised
 defaults to `https://proxy.golang.org,direct`
 setting it to `direct` means do not use any proxy, always download from source VCS
 
@@ -130,9 +132,15 @@ used to consult for checksums of modules
 defaults to `https://sum.golang.org`
 - Have a look inside `$GOPATH/pkg/sumdb/sum.golang.org`
 
-- GOPRIVATE=*.corp.example.com,rsc.io/private
+- GOPRIVATE=*.corp.example.com,rsc.io/private (NOT REQUIRED)
+
+I'll link some resources about `$GOPROXY` and `$GOSUMDB`
+
+### Migrate a small project to Go modules
+
+- migrate `simple-http` project
 
 ### Outro
 
 - Mention resources section for all `code used`
-- Get your packages & leave
+- Get your packages & leave - And now if you'll excuse me I have to leave, oh crap.
