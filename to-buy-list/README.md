@@ -147,7 +147,6 @@ need to tell you :D
 
 ### Final Verdict (Best Quickest Beginner Option)
 
-`Total with camera`: **$1121**
 `Total without camera`: **$622**
 
 - Phone (You Have it)
@@ -157,6 +156,6 @@ need to tell you :D
 - DJI Ronin-S Tripod ($39)
 - Neewer Kit - Green Screen + Lights ($220)
 
-`Extra`: `$499`
+`Total with camera`: **$1121**
 
 - Canon M50 + Kit Lens (15-45mm) ($499)
