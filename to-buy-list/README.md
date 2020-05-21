@@ -21,6 +21,7 @@
 
 - Computer (handles >= 1080p)
 - Phone (records >= 1080p)
+- Decent recording room
 
 ## Software
 
