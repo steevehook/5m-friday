@@ -159,3 +159,11 @@ need to tell you :D
 `Total with camera`: **$1121**
 
 - Canon M50 + Kit Lens (15-45mm) ($499)
+
+`Total with EpidemicSound`: **$1251**
+
+- EpidemicSound (120 Euros/year - Personal Subscription)
+
+`Total with Envato Elements`: **$1319**
+
+- Envato Elements ($198/year)
