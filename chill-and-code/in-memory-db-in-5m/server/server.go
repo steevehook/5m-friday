@@ -114,7 +114,7 @@ func (srv *Server) handleConn(conn net.Conn) {
 			write(conn, "OK")
 		case len(values) == 1 && values[0] == "exit":
 			if err := conn.Close(); err != nil {
-				log.Fatal(err)
+				fmt.Println("could not close connection", err.Error())
 			}
 		default:
 			write(conn, fmt.Sprintf("UNKNOWN: %s", l))
