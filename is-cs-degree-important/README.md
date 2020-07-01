@@ -23,24 +23,25 @@ Question: What's the ultimate purpose of getting a CS degree?
 
 ### Alternatives
 
-- Bootcamp
+- Bootcamps
 - Online paid courses / Subscriptions
 - YouTube
 
 ### University Problems
 
 1) Money
-2) Content Quality
+2) Content Quality => Teachers
 
 ### My Personal advices to teachers/universities
 
+- Invest in teachers & your income not in students
 - Try to teach practical things (what's on demand)
 - Constantly evolve & learn new technologies
 - Get feedback from students on what would they want to learn
 - Adjust your programs more frequently
 - Offer monthly subscriptions to your courses?
 - Involve students in your program development
-- Redefine learning and passion for learning
+- Redefine learning and the passion for learning
 - Have direct contracts with Real World companies
 
 ### Questions to Answer
